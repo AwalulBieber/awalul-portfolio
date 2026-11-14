@@ -199,13 +199,19 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
 @keyframes skillDrift{0%,100%{transform:translate3d(0,0,0) rotate(0deg)}50%{transform:translate3d(0,-9px,0) rotate(.35deg)}}
 @media(prefers-reduced-motion:reduce){.skills-grid .skill-card{animation:none!important;will-change:auto}}
 
+
+.about-name .typed-line{display:inline;white-space:pre}
+.about-name .typing-caret{display:inline-block;width:3px;height:.78em;margin-left:5px;vertical-align:-.04em;background:var(--cyan);box-shadow:0 0 12px rgba(140,236,255,.8);animation:typeBlink .8s steps(2,start) infinite}
+@keyframes typeBlink{to{visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.about-name .typing-caret{animation:none;opacity:1}}
+
 </style>
 </head>
 <body><canvas id="spaceCanvas" aria-hidden="true"></canvas><div class="noise"></div>
 <nav class="nav glass"><a class="brand" href="#about">Awalul</a><div class="navlinks" id="navlinks"><a href="#about">Home</a><a href="#about">About</a><a href="#portfolio">Projects</a><a href="#community">Community</a><a href="#contact">Contact</a></div><button class="menu" id="menu" aria-label="Buka menu">☰</button></nav>
 
 <main>
-<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name">MUHAMMAD<br><span>AWALUL&nbsp; HAKIM</span><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
+<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name" aria-label="Muhammad Awalul Hakim"><span class="typed-line" id="typedFirst">MUHAMMAD</span><br><span class="typed-line" id="typedLast">AWALUL HAKIM</span><i class="typing-caret" aria-hidden="true"></i><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
 <div class="now-exploring reveal">
   <div class="explore-heading"><span class="section-kicker">CURRENTLY IN MY ORBIT</span><span class="explore-line"></span></div>
   <div class="explore-grid">
@@ -256,6 +262,33 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  const label=portfolioTitle.textContent.trim();portfolioTitle.textContent='';
  [...label].forEach((char,i)=>{const s=document.createElement('span');s.style.setProperty('--i',i);s.textContent=char;portfolioTitle.appendChild(s)});
 }
+
+const typedFirst=document.getElementById('typedFirst'),typedLast=document.getElementById('typedLast');
+if(typedFirst&&typedLast){
+ const firstName='MUHAMMAD',lastName='AWALUL HAKIM';
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){typedFirst.textContent=firstName;typedLast.textContent=lastName}
+ else{
+  let a=0,b=0,erasing=false,hold=0;
+  typedFirst.textContent='';typedLast.textContent='';
+  const typeLoop=()=>{
+   if(hold>0){hold--;return}
+   if(!erasing){
+    if(a<firstName.length)a++;
+    else if(b<lastName.length)b++;
+    else{hold=13;erasing=true}
+   }else{
+    if(b>0)b--;
+    else if(a>0)a--;
+    else{hold=4;erasing=false}
+   }
+   typedFirst.textContent=firstName.slice(0,a);
+   typedLast.textContent=lastName.slice(0,b);
+  };
+  setInterval(typeLoop,erasing?65:115);
+  typeLoop();
+ }
+}
+
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%5,4)*75)+'ms';revealObserver.observe(el)});
 const backtop=document.getElementById('backtop');

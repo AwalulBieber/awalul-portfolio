@@ -159,6 +159,35 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
 .track-note{font-size:9px!important;line-height:1.6!important;margin:8px 3px 0!important;color:var(--muted)!important}
 @media(prefers-reduced-motion:reduce){.track-equalizer i{animation:none}}
 
+
+/* Temporary Atlantic product illustration — intentionally not a real app screenshot */
+.atlantic-art{background:radial-gradient(ellipse at 50% 48%,rgba(52,192,226,.22),transparent 48%),linear-gradient(145deg,#111b3b,#0a1026 65%,#17102f)}
+.atlantic-art:before{width:270px;height:270px;border-color:rgba(111,224,255,.17);box-shadow:0 0 0 28px rgba(140,236,255,.025),0 0 0 68px rgba(140,236,255,.018)}
+.atlantic-art:after{width:190px;height:190px;border-color:rgba(190,160,255,.22)}
+.atlantic-window{position:relative;z-index:2;width:min(76%,430px);height:190px;border:1px solid rgba(190,225,255,.32);border-radius:17px;background:linear-gradient(145deg,rgba(30,47,83,.94),rgba(11,19,42,.96));box-shadow:0 22px 65px rgba(0,0,0,.38),0 0 40px rgba(69,191,226,.14);backdrop-filter:blur(15px);overflow:hidden;transform:perspective(850px) rotateY(-8deg) rotateX(4deg);animation:atlanticFloat 6s ease-in-out infinite}
+@keyframes atlanticFloat{50%{transform:perspective(850px) rotateY(-4deg) rotateX(1deg) translateY(-7px)}}
+.atlantic-top{height:34px;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid rgba(210,230,255,.1);font:600 9px var(--display);color:#e6f7ff}
+.atlantic-dot{width:7px;height:7px;border-radius:50%;background:#70e9c0;box-shadow:0 0 9px #70e9c0}
+.atlantic-brand{letter-spacing:.5px}.atlantic-status{margin-left:auto;font:600 6px var(--body);letter-spacing:1px;color:#79e9c7}
+.atlantic-body{height:calc(100% - 34px);display:flex}
+.atlantic-sidebar{width:38px;flex:0 0 38px;border-right:1px solid rgba(210,230,255,.1);display:flex;flex-direction:column;align-items:center;gap:13px;padding-top:15px}
+.atlantic-sidebar i{width:13px;height:13px;border-radius:5px;background:linear-gradient(145deg,rgba(133,220,255,.75),rgba(162,139,255,.45));box-shadow:0 0 12px rgba(100,204,255,.12)}
+.atlantic-chat{flex:1;padding:9px 12px;position:relative}
+.atlantic-chat-head{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.atlantic-chat-head>b{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#7ce6ff,#a58aff);box-shadow:0 0 12px rgba(124,230,255,.3)}
+.atlantic-chat-head strong{display:block;font:600 8px var(--display);color:#f0f5ff}
+.atlantic-chat-head small{display:block;font:6px var(--body);color:#91a5c6;margin-top:2px}
+.atlantic-chat-head em{margin-left:auto;font-style:normal;color:#91a5c6;font-size:10px}
+.atlantic-bubble{width:max-content;max-width:72%;padding:6px 9px;border-radius:9px;font:6px var(--body);margin:6px 0;color:#dceaff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.07)}
+.atlantic-bubble.right{margin-left:auto;background:linear-gradient(120deg,rgba(52,167,213,.36),rgba(126,104,220,.38));border-color:rgba(134,213,255,.22)}
+.atlantic-bubble.short{width:43%}
+.atlantic-compose{position:absolute;bottom:8px;left:12px;right:12px;height:22px;border:1px solid rgba(190,225,255,.16);border-radius:7px;display:flex;align-items:center;justify-content:space-between;padding:0 6px;color:#7186a8;font:6px var(--body);background:rgba(255,255,255,.035)}
+.atlantic-compose b{display:grid;place-items:center;width:14px;height:14px;border-radius:5px;background:#70dff5;color:#0b1831;font-size:9px}
+.atlantic-caption{position:absolute;z-index:2;bottom:14px;left:18px;right:18px;display:flex;justify-content:space-between;align-items:center;font:700 9px var(--display);letter-spacing:2px;color:#e4f9ff;text-shadow:0 0 14px rgba(140,236,255,.5)}
+.atlantic-caption span{font:600 6px var(--body);letter-spacing:1px;color:#8cecff}
+@media(max-width:760px){.atlantic-window{width:82%;height:178px}.atlantic-art{height:210px}}
+@media(prefers-reduced-motion:reduce){.atlantic-window{animation:none}}
+
 </style>
 </head>
 <body><canvas id="spaceCanvas" aria-hidden="true"></canvas><div class="noise"></div>
@@ -175,7 +204,7 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
   </div>
 </div></div></section>
 <section id="portfolio"><div class="wrap"><div class="portfolio-head reveal"><div><div class="section-kicker">02 / Selected works</div><h2 class="section-title">My <em>Projects</em></h2></div><p class="portfolio-note">Beberapa project digital yang sedang dan telah saya kembangkan.</p></div><div class="projects">
-<article class="project glass reveal"><div class="project-art"><span>ATLANTIC.</span></div><div class="project-info"><small>Web application · Communication</small><h3>Atlantic</h3><p>Platform komunikasi berbasis web yang dirancang untuk menghadirkan pengalaman chatting yang praktis, modern, dan personal.</p><a class="project-link" href="https://atlantic-2ix1.vercel.app/" target="_blank" rel="noreferrer">Explore project ↗</a></div></article>
+<article class="project glass reveal"><div class="project-art atlantic-art" aria-label="Ilustrasi sementara aplikasi chat Atlantic"><div class="atlantic-orbit"></div><div class="atlantic-window"><div class="atlantic-top"><span class="atlantic-dot"></span><span class="atlantic-brand">atlantic</span><span class="atlantic-status">● ONLINE</span></div><div class="atlantic-body"><div class="atlantic-sidebar"><i></i><i></i><i></i><i></i></div><div class="atlantic-chat"><div class="atlantic-chat-head"><b></b><span><strong>Messages</strong><small>Private conversation</small></span><em>•••</em></div><div class="atlantic-bubble left">Hey! What's up?</div><div class="atlantic-bubble right">Building something new ✦</div><div class="atlantic-bubble left short">Looks awesome!</div><div class="atlantic-compose"><span>Write a message...</span><b>↑</b></div></div></div></div><div class="atlantic-caption">ATLANTIC <span>PRIVATE · CONNECTED</span></div></div><div class="project-info"><small>Web application · Communication</small><h3>Atlantic</h3><p>Platform komunikasi berbasis web yang dirancang untuk menghadirkan pengalaman chatting yang praktis, modern, dan personal.</p><a class="project-link" href="https://atlantic-2ix1.vercel.app/" target="_blank" rel="noreferrer">Explore project ↗</a></div></article>
 <article class="project glass reveal"><div class="project-art"><span>AURALYS.</span></div><div class="project-info"><small>Android app · Music streaming</small><h3>Auralys</h3><p>Aplikasi pemutar dan streaming musik dengan pengalaman mendengarkan yang nyaman, tampilan modern, dan bebas gangguan iklan. Temukan musik favorit dan nikmati setiap iramanya bersama Auralys.</p><div class="auralys-track"><div class="track-label"><span class="track-equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>NOW PLAYING · SPOTIFY</span></div><iframe title="Putar About You oleh The 1975 di Spotify" src="https://open.spotify.com/embed/track/1fDFHXcykq4iw8Gg7s5hG9?utm_source=generator&amp;theme=0&amp;autoplay=1" width="100%" height="152" style="border:0;border-radius:14px" loading="eager" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="track-note">Tekan tombol play untuk mendengarkan lagu resmi melalui Spotify.</p></div><a class="project-link" href="https://www.mediafire.com/file/uveyo6qmieoyhy2/Auralys-4.3.3.apk/file" target="_blank" rel="noreferrer">Download APK ↗</a></div></article>
 </div></div></section>
 <section id="community"><div class="wrap"><div class="section-kicker reveal">03 / People & practice</div><h2 class="section-title reveal">Community <em>& Skills</em></h2><p class="portfolio-note reveal" style="max-width:620px;margin:-12px 0 30px">Bertumbuh bersama komunitas, berbagi wawasan, dan terus mengembangkan kemampuan di bidang teknologi serta desain.</p>

@@ -382,6 +382,16 @@ section:not(.about-first){background:var(--bg)}
  .skills-grid .skill-card,.skills-grid .skill-card:before{animation:none!important}
 }
 
+/* Framed photo gallery under CURRENTLY IN MY ORBIT */
+.orbit-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:30px 0 34px}
+.orbit-photo{margin:0;min-width:0;padding:10px 10px 13px;background:#fffdf6;border:3px solid #171717;box-shadow:7px 7px 0 #171717;transform:rotate(var(--photo-tilt,0deg));transition:transform .28s ease,box-shadow .28s ease;overflow:hidden}
+.orbit-photo:nth-child(2){--photo-tilt:1.2deg}.orbit-photo:nth-child(3){--photo-tilt:-1deg}.orbit-photo:nth-child(4){--photo-tilt:.8deg}.orbit-photo:nth-child(5){--photo-tilt:-1.2deg}.orbit-photo:nth-child(6){--photo-tilt:.7deg}
+.orbit-photo:hover{transform:translateY(-7px) rotate(0) scale(1.015);box-shadow:11px 11px 0 #171717;z-index:2}
+.orbit-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#e8e2d6;border:2px solid #171717}
+.orbit-photo figcaption{padding:10px 2px 0;color:#171717;font:800 9px 'Space Grotesk',sans-serif;letter-spacing:1.4px;text-align:center}
+@media(max-width:760px){.orbit-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:24px 0 29px}.orbit-photo{padding:7px 7px 10px;border-width:2px;box-shadow:5px 5px 0 #171717}.orbit-photo figcaption{font-size:8px;letter-spacing:1px}.orbit-photo:hover{box-shadow:7px 7px 0 #171717}}
+@media(prefers-reduced-motion:reduce){.orbit-photo{transition:none}}
+
 </style>
 </head>
 <body><canvas id="spaceCanvas" aria-hidden="true"></canvas><div class="noise"></div>
@@ -391,6 +401,14 @@ section:not(.about-first){background:var(--bg)}
 <section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name" aria-label="Muhammad Awalul Hakim"><span class="typed-line" id="typedFirst">MUHAMMAD</span><br><span class="typed-line" id="typedLast">AWALUL HAKIM</span><i class="typing-caret" aria-hidden="true"></i><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
 <div class="now-exploring reveal">
   <div class="explore-heading"><span class="section-kicker">CURRENTLY IN MY ORBIT</span><span class="explore-line"></span></div>
+  <div class="orbit-gallery" aria-label="Photo gallery">
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/fdhxR18Y/IMG-20260819-WA0034.jpg" alt="Foto 1" loading="lazy"><figcaption>ORBIT SNAPSHOT 01</figcaption></figure>
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/yFCcY2tg/IMG-20260811-WA0049.jpg" alt="Foto 2" loading="lazy"><figcaption>ORBIT SNAPSHOT 02</figcaption></figure>
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/4g5RycDd/IMG-20260228-WA0018.jpg" alt="Foto 3" loading="lazy"><figcaption>ORBIT SNAPSHOT 03</figcaption></figure>
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/hxTrM8bn/IMG-20251004-WA0022.jpg" alt="Foto 4" loading="lazy"><figcaption>ORBIT SNAPSHOT 04</figcaption></figure>
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/7JbxXTtb/IMG-20250602-WA0030.jpg" alt="Foto 5" loading="lazy"><figcaption>ORBIT SNAPSHOT 05</figcaption></figure>
+    <figure class="orbit-photo"><img src="https://i.ibb.co.com/Df8CvP3q/IMG-20250526-WA0035.jpg" alt="Foto 6" loading="lazy"><figcaption>ORBIT SNAPSHOT 06</figcaption></figure>
+  </div>
   <div class="explore-grid">
     <article class="explore-card glass"><span class="explore-index">01</span><div><h3>Building</h3><p>Mengembangkan project digital dan pengalaman web yang lebih baik.</p></div><span class="explore-symbol">⌘</span></article>
     <article class="explore-card glass"><span class="explore-index">02</span><div><h3>Learning</h3><p>Mendalami teknologi, coding, dan desain melalui praktik langsung.</p></div><span class="explore-symbol">✳</span></article>

@@ -110,13 +110,58 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
  }
 }
 
+
+/* Typography polish, scan shimmer, and a meaningful About footer */
+.brand{font-size:20px;letter-spacing:-.6px}
+.portfolio-masthead h1{letter-spacing:-.055em;word-spacing:.04em}
+.portfolio-masthead h1 span{background-size:240% 100%;animation:portfolioLetter .9s cubic-bezier(.16,1,.3,1) forwards,letterShine 4.8s ease-in-out 1.5s infinite}
+.portfolio-masthead{overflow:hidden}
+.portfolio-masthead:after{content:"";position:absolute;left:5%;right:5%;top:20%;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(151,241,255,.0),rgba(207,244,255,.9),rgba(186,161,255,.8),transparent);filter:blur(1px);box-shadow:0 0 18px rgba(140,236,255,.65);opacity:0;animation:titleScan 3.6s ease-in-out 1.25s infinite}
+@keyframes titleScan{0%{top:18%;opacity:0;transform:scaleX(.3)}12%{opacity:.9}82%{opacity:.75}100%{top:82%;opacity:0;transform:scaleX(1)}}
+@keyframes letterShine{0%,72%,100%{background-position:0% 50%;filter:drop-shadow(0 0 0 rgba(140,236,255,0))}84%{background-position:100% 50%;filter:drop-shadow(0 0 9px rgba(140,236,255,.65))}}
+.about-copy .about-name{letter-spacing:-.035em;word-spacing:.12em;line-height:1.08}
+.about-name span{display:inline-block;letter-spacing:.015em;word-spacing:.18em}
+.about-name em{margin-left:3px}
+.about-copy .section-kicker{animation:kickerGlow 3.8s ease-in-out infinite}
+@keyframes kickerGlow{50%{text-shadow:0 0 14px rgba(140,236,255,.75);color:#d8faff}}
+.about-copy p{animation:textEaseIn .8s both}
+.about-copy p:nth-of-type(1){animation-delay:.18s}.about-copy p:nth-of-type(2){animation-delay:.34s}
+@keyframes textEaseIn{from{opacity:0;transform:translateY(13px);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+.now-exploring{margin:clamp(58px,8vw,100px) 0 8px}
+.explore-heading{display:flex;align-items:center;gap:18px;margin-bottom:17px}
+.explore-line{height:1px;flex:1;background:linear-gradient(90deg,rgba(140,236,255,.4),transparent)}
+.explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.explore-card{position:relative;min-height:126px;border-radius:20px;padding:19px 18px;display:flex;gap:13px;align-items:flex-start;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.explore-card:hover{transform:translateY(-6px);border-color:rgba(140,236,255,.48);box-shadow:0 18px 50px rgba(79,105,190,.16)}
+.explore-index{font:600 10px var(--display);color:var(--cyan);letter-spacing:1px;padding-top:4px}
+.explore-card h3{font:600 17px var(--display);margin:0 0 7px;letter-spacing:-.02em}
+.explore-card p{font-size:10px;line-height:1.75;color:var(--muted);margin:0;max-width:230px}
+.explore-symbol{margin-left:auto;color:rgba(160,220,255,.55);font:26px var(--display);align-self:flex-end}
+@media(max-width:760px){
+ .portfolio-masthead h1{letter-spacing:-.045em;font-size:clamp(48px,13vw,92px)}
+ .about-copy .about-name{letter-spacing:-.025em;word-spacing:.09em}
+ .about-name span{letter-spacing:.025em;word-spacing:.14em}
+ .explore-grid{grid-template-columns:1fr;gap:10px}
+ .explore-card{min-height:96px;padding:16px}
+ .now-exploring{margin:55px 0 0}
+}
+@media(prefers-reduced-motion:reduce){.portfolio-masthead:after,.portfolio-masthead h1 span,.about-copy p,.about-copy .section-kicker{animation:none!important;filter:none!important}}
+
 </style>
 </head>
 <body><canvas id="spaceCanvas" aria-hidden="true"></canvas><div class="noise"></div>
-<nav class="nav glass"><a class="brand" href="#about">awalul<span>.</span></a><div class="navlinks" id="navlinks"><a href="#about">Home</a><a href="#about">About</a><a href="#portfolio">Projects</a><a href="#community">Community</a><a href="#contact">Contact</a></div><button class="menu" id="menu" aria-label="Buka menu">☰</button></nav>
+<nav class="nav glass"><a class="brand" href="#about">Awalul</a><div class="navlinks" id="navlinks"><a href="#about">Home</a><a href="#about">About</a><a href="#portfolio">Projects</a><a href="#community">Community</a><a href="#contact">Contact</a></div><button class="menu" id="menu" aria-label="Buka menu">☰</button></nav>
 
 <main>
-<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="Portfolio">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title">Muhammad<br>Awalul Hakim<em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div></div></section>
+<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name">MUHAMMAD<br><span>AWALUL&nbsp; HAKIM</span><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
+<div class="now-exploring reveal">
+  <div class="explore-heading"><span class="section-kicker">CURRENTLY IN MY ORBIT</span><span class="explore-line"></span></div>
+  <div class="explore-grid">
+    <article class="explore-card glass"><span class="explore-index">01</span><div><h3>Building</h3><p>Mengembangkan project digital dan pengalaman web yang lebih baik.</p></div><span class="explore-symbol">⌘</span></article>
+    <article class="explore-card glass"><span class="explore-index">02</span><div><h3>Learning</h3><p>Mendalami teknologi, coding, dan desain melalui praktik langsung.</p></div><span class="explore-symbol">✳</span></article>
+    <article class="explore-card glass"><span class="explore-index">03</span><div><h3>Exploring</h3><p>Mencoba ide baru, bereksperimen, dan mencari hal yang bisa diciptakan.</p></div><span class="explore-symbol">↗</span></article>
+  </div>
+</div></div></section>
 <section id="portfolio"><div class="wrap"><div class="portfolio-head reveal"><div><div class="section-kicker">02 / Selected works</div><h2 class="section-title">My <em>Projects</em></h2></div><p class="portfolio-note">Beberapa project digital yang sedang dan telah saya kembangkan.</p></div><div class="projects">
 <article class="project glass reveal"><div class="project-art"><span>ATLANTIC.</span></div><div class="project-info"><small>Web application · Communication</small><h3>Atlantic</h3><p>Platform komunikasi berbasis web yang dirancang untuk menghadirkan pengalaman chatting yang praktis, modern, dan personal.</p><a class="project-link" href="https://atlantic-2ix1.vercel.app/" target="_blank" rel="noreferrer">Explore project ↗</a></div></article>
 <article class="project glass reveal"><div class="project-art"><span>AURALYS.</span></div><div class="project-info"><small>Android app · Music streaming</small><h3>Auralys</h3><p>Aplikasi pemutar dan streaming musik dengan pengalaman mendengarkan yang nyaman, tampilan modern, dan bebas gangguan iklan. Temukan musik favorit dan nikmati setiap iramanya bersama Auralys.</p><a class="project-link" href="https://www.mediafire.com/file/uveyo6qmieoyhy2/Auralys-4.3.3.apk/file" target="_blank" rel="noreferrer">Download APK ↗</a></div></article>

@@ -111,6 +111,42 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
 }
 
 
+/* Origin code panel — electric blue editor theme */
+.origin-code{max-width:850px;margin:-25px auto 76px;padding:0 12px;position:relative}
+.origin-heading{text-align:center;margin-bottom:24px}
+.origin-eyebrow{font:700 9px var(--display);letter-spacing:4px;color:#65bfff}
+.origin-heading h2{font:700 clamp(28px,5vw,48px)/1.08 var(--display);letter-spacing:-.06em;margin:10px 0;color:#f4f8ff}
+.origin-heading h2 em{font-style:normal;color:#69c4ff;text-shadow:0 0 25px rgba(65,166,255,.4)}
+.origin-heading p{font-size:11px;color:#aabbd2;margin:0}
+.code-window{overflow:hidden;border:1px solid rgba(92,177,255,.3);border-radius:18px;background:linear-gradient(145deg,rgba(12,24,43,.97),rgba(7,13,27,.98));box-shadow:0 22px 70px rgba(0,105,210,.13),0 0 0 1px rgba(105,196,255,.06),inset 0 1px rgba(255,255,255,.06);position:relative}
+.code-window:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 25%,rgba(87,174,255,.045) 48%,transparent 70%);transform:translateX(-100%);animation:codeSweep 5.5s ease-in-out 1.2s infinite}
+@keyframes codeSweep{55%,100%{transform:translateX(100%)}}
+.code-topbar{height:48px;padding:0 17px;display:flex;align-items:center;gap:13px;background:rgba(83,139,202,.09);border-bottom:1px solid rgba(116,184,255,.14);color:#c5d9f1;font:600 10px var(--display);letter-spacing:.5px}
+.code-dots{display:flex;gap:5px}.code-dots i{width:7px;height:7px;border-radius:50%;background:#58aaff;opacity:.9}.code-dots i:nth-child(2){background:#80d5ff}.code-dots i:nth-child(3){background:#b3dfff}
+.code-language{margin-left:auto;color:#65bfff;font-size:8px;letter-spacing:1.5px}
+.code-editor{padding:22px 22px 18px;min-height:225px;position:relative}
+.code-line{display:flex;min-height:25px;align-items:center;gap:22px;font:500 clamp(10px,1.7vw,13px)/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}
+.code-line>b{width:12px;text-align:right;color:#4f7095;font-size:10px;font-weight:400;user-select:none}
+.code-line code{color:#d7eaff}
+.code-key{color:#72baff}.code-string{color:#9ce4ff}.code-punc{color:#d5e8ff}.code-comment{color:#6f91b6;font-style:italic}
+.code-caret{display:inline-block;width:7px;height:15px;background:#6bc4ff;vertical-align:middle;margin-left:33px;box-shadow:0 0 12px #4aaeff;animation:codeBlink .8s steps(2,start) infinite}
+@keyframes codeBlink{to{opacity:0}}
+.output-panel{border-top:1px solid rgba(116,184,255,.15);padding:15px 22px 19px;background:rgba(27,76,125,.13)}
+.output-label{font:700 8px var(--display);letter-spacing:2px;color:#72baff;display:flex;align-items:center;gap:8px}
+.output-label>span{width:6px;height:6px;border-radius:50%;background:#62d5ff;box-shadow:0 0 10px #62d5ff}
+.output-label small{margin-left:auto;color:#6686a7;font-size:7px;letter-spacing:1.5px}
+.output-result{display:flex;align-items:center;gap:10px;margin-top:10px;font:500 13px ui-monospace,SFMono-Regular,Consolas,monospace;color:#e5f5ff}
+.output-result>b{color:#62c4ff}.output-result i{width:6px;height:14px;background:#72c8ff;animation:codeBlink .8s steps(2,start) infinite}
+.origin-caption{display:flex;justify-content:space-between;gap:12px;margin:13px 3px 0;color:#6f8baa;font:700 8px var(--display);letter-spacing:1.5px}
+.origin-caption b{color:#6fc5ff;margin-left:5px}
+.portrait{position:relative;overflow:hidden}
+.portrait:after{content:"";position:absolute;z-index:3;left:0;right:0;top:-35%;height:32%;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(83,190,255,.08) 22%,rgba(105,208,255,.72) 50%,rgba(57,153,255,.12) 75%,transparent);border-top:1px solid rgba(153,224,255,.8);border-bottom:1px solid rgba(99,191,255,.55);box-shadow:0 0 22px rgba(65,174,255,.5);opacity:0;animation:portraitScan 4.2s ease-in-out 1s infinite}
+@keyframes portraitScan{0%{top:-35%;opacity:0}12%{opacity:.9}78%{opacity:.72}100%{top:105%;opacity:0}}
+.skill-card img{min-width:38px;min-height:38px}
+.skill-card img[src*="css3"]{content:url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg");filter:drop-shadow(0 0 9px rgba(38,77,228,.35))}
+@media(max-width:600px){.origin-code{margin:-15px auto 58px;padding:0 4px}.code-editor{padding:17px 12px 14px;min-height:205px}.code-line{gap:13px;font-size:10px}.code-line>b{font-size:9px}.code-caret{margin-left:24px}.origin-caption{font-size:7px;letter-spacing:1px}.code-topbar{height:43px;padding:0 12px}}
+@media(prefers-reduced-motion:reduce){.code-window:after,.code-caret,.output-result i,.portrait:after{animation:none;opacity:.45}}
+
 /* Typography polish, scan shimmer, and a meaningful About footer */
 .brand{font-size:20px;letter-spacing:-.6px}
 .portfolio-masthead h1{letter-spacing:-.055em;word-spacing:.04em}
@@ -390,7 +426,27 @@ section:not(.about-first){background:var(--bg)}
 <nav class="nav glass"><a class="brand" href="#about">Awalul</a><div class="navlinks" id="navlinks"><a href="#about">Home</a><a href="#about">About</a><a href="#portfolio">Projects</a><a href="#community">Community</a><a href="#contact">Contact</a></div><button class="menu" id="menu" aria-label="Buka menu">☰</button></nav>
 
 <main>
-<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div><div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name" aria-label="Muhammad Awalul Hakim"><span class="typed-line" id="typedFirst">MUHAMMAD</span><br><span class="typed-line" id="typedLast">AWALUL HAKIM</span><i class="typing-caret" aria-hidden="true"></i><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
+<section id="about" class="about-first"><div class="wrap"><div class="portfolio-masthead"><div class="masthead-kicker">PERSONAL SPACE · 2026</div><h1 id="portfolioTitle" aria-label="PORTFOLIO">PORTFOLIO</h1><p>MUHAMMAD AWALUL HAKIM <span>✦</span> CREATIVE DEVELOPER</p></div>
+<section class="origin-code reveal" aria-label="Perjalanan coding dimulai">
+  <div class="origin-heading"><span class="origin-eyebrow">THE FIRST LINE</span><h2>Perjalanan ini <em>dimulai.</em></h2><p>Semua berawal dari satu baris kode sederhana.</p></div>
+  <div class="code-window">
+    <div class="code-topbar"><div class="code-dots"><i></i><i></i><i></i></div><span>hello_world.go</span><span class="code-language">GO · SOURCE</span></div>
+    <div class="code-editor"><div class="code-line"><b>1</b><code><span class="code-key" data-type="package main"></span></code></div>
+      <div class="code-line"><b>2</b><code></code></div>
+      <div class="code-line"><b>3</b><code><span class="code-key" data-type="import "></span><span class="code-string" data-type='"fmt"'></span></code></div>
+      <div class="code-line"><b>4</b><code></code></div>
+      <div class="code-line"><b>5</b><code><span class="code-key" data-type="func main() "></span><span class="code-punc" data-type="{"></span></code></div>
+      <div class="code-line"><b>6</b><code>    <span class="code-key" data-type="fmt.Println"></span><span class="code-punc" data-type="("></span><span class="code-string" data-type='"Hello, World!"'></span><span class="code-punc" data-type=")"></span></code></div>
+      <div class="code-line"><b>7</b><code><span class="code-punc" data-type="}"></span></code></div>
+      <div class="code-line"><b>8</b><code><span class="code-comment" data-type="// Dulu, satu baris ini bisa bikin hati bangga banget."></span></code></div>
+      <div class="code-line"><b>9</b><code><span class="code-comment" data-type="// Karena dari sinilah semua perjalanan ngoding dimulai."></span></code></div>
+      <span class="code-caret" aria-hidden="true"></span>
+    </div>
+    <div class="output-panel"><div class="output-label"><span></span> OUTPUT <small>TERMINAL</small></div><div class="output-result"><b>›</b><span id="originOutput">Hello, World!</span><i></i></div></div>
+  </div>
+  <div class="origin-caption"><span>01 — FIRST PROGRAM</span><span>THE BEGINNING OF EVERYTHING <b>✦</b></span></div>
+</section>
+<div class="section-kicker reveal">01 / About me</div><div class="about-layout"><div class="portrait-wrap reveal"><div class="portrait" id="portrait"><img class="portrait-original" src="https://i.postimg.cc/50kv3rKH/177898-removebg-preview.png" alt="Foto asli Muhammad Awalul Hakim" draggable="false"><img class="portrait-spider" src="https://i.postimg.cc/c12wtV8P/177897-removebg-preview.png" alt="" aria-hidden="true" draggable="false"><div class="portrait-hint glass">Move your cursor / touch</div></div><div class="portrait-frame"></div></div><div class="about-copy reveal"><div class="section-kicker">Hello, I'm</div><h2 class="section-title about-name" aria-label="Muhammad Awalul Hakim"><span class="typed-line" id="typedFirst">MUHAMMAD</span><br><span class="typed-line" id="typedLast">AWALUL HAKIM</span><i class="typing-caret" aria-hidden="true"></i><em>.</em></h2><p>Seorang pelajar yang suka mengeksplorasi teknologi, membangun sesuatu di dunia digital, dan terus belajar dari setiap proses.</p><p>Ini adalah ruang untuk memperkenalkan diri, menampilkan karya, komunitas, dan hal-hal yang sedang saya pelajari.</p><div class="about-tags"><span class="tag">Technology</span><span class="tag">Creative</span><span class="tag">Web explorer</span></div></div></div>
 <div class="now-exploring reveal">
   <div class="explore-heading"><span class="section-kicker">CURRENTLY IN MY ORBIT</span><span class="explore-line"></span></div>
   <div class="orbit-gallery" aria-label="Photo gallery">
@@ -475,6 +531,25 @@ if(typedFirst&&typedLast){
   typeLoop();
  }
 }
+
+// Type the starter Go program line by line, then reveal its terminal output.
+(()=>{
+ const parts=[...document.querySelectorAll('.origin-code [data-type]')];
+ const output=document.getElementById('originOutput');
+ if(!parts.length||!output)return;
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){parts.forEach(el=>el.textContent=el.dataset.type);return}
+ let index=0,char=0,finished=false;
+ parts.forEach(el=>el.textContent='');
+ output.style.opacity='0';
+ function typeNext(){
+   if(index>=parts.length){finished=true;output.style.opacity='1';return}
+   const el=parts[index],value=el.dataset.type;
+   el.textContent=value.slice(0,++char);
+   if(char>=value.length){index++;char=0;setTimeout(typeNext,105)}
+   else setTimeout(typeNext,28+Math.random()*32);
+ }
+ setTimeout(typeNext,700);
+})();
 
 const revealItems=[...document.querySelectorAll('.reveal')];
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;

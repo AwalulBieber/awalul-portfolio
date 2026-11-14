@@ -188,6 +188,17 @@ body:after{opacity:.32;filter:blur(26px);animation:nebula 11s ease-in-out infini
 @media(max-width:760px){.atlantic-window{width:82%;height:178px}.atlantic-art{height:210px}}
 @media(prefers-reduced-motion:reduce){.atlantic-window{animation:none}}
 
+
+/* Skill cards gently float at different rhythms */
+.skills-grid .skill-card{animation:skillDrift 4.8s ease-in-out infinite;will-change:transform}
+.skills-grid .skill-card:nth-child(4n+1){animation-delay:-.4s}
+.skills-grid .skill-card:nth-child(4n+2){animation-delay:-1.6s}
+.skills-grid .skill-card:nth-child(4n+3){animation-delay:-2.8s}
+.skills-grid .skill-card:nth-child(4n){animation-delay:-3.9s}
+.skills-grid .skill-card:hover{animation-play-state:paused}
+@keyframes skillDrift{0%,100%{transform:translate3d(0,0,0) rotate(0deg)}50%{transform:translate3d(0,-9px,0) rotate(.35deg)}}
+@media(prefers-reduced-motion:reduce){.skills-grid .skill-card{animation:none!important;will-change:auto}}
+
 </style>
 </head>
 <body><canvas id="spaceCanvas" aria-hidden="true"></canvas><div class="noise"></div>
